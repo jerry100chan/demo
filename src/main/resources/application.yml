@@ -1,0 +1,31 @@
+server:
+  port: 9000
+
+logging:
+  level:
+    root: info
+    com.example.demo: debug
+
+task:
+  pool:
+    corePoolSize: 5
+    maxPoolSize: 20
+    keepAliveSeconds: 300
+    queueCapacity: 50
+
+url:
+  user-info: https://jsonplaceholder.typicode.com/users
+  post: https://jsonplaceholder.typicode.com/posts
+
+spring:
+  application:
+    name: demo
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    locale: en                          # using english as locale
+    time-zone: GMT+8
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false  # forbid java.util.Date, Calendar serialize to timestamp
+      FAIL_ON_EMPTY_BEANS: false        # bean can be null when serializing
+    deserialization:
+      FAIL_ON_UNKNOWN_PROPERTIES: false  # properties can be unknown when deserializing
